@@ -1,0 +1,868 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'poppins',sans-serif;
+    transition: 0.6s;
+}
+body
+    {
+        text-align: center;
+    }
+    
+
+.dropdown{
+    position: relative;
+    margin-top:15px;
+    width:300px ;
+    height: 50px;
+    padding: 20px;
+    transition: all 0.5s;
+}
+.dropdown:before
+{
+    content:'';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid rgb(245, 4, 4);
+    right: 20px;
+    top: 15px;
+    z-index: 1000000;
+    border-top: 2px solid rgb(253, 253, 253);
+    border-right: 2px solid #fff;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+.dropdown.active:before
+{
+    top:22px;
+    transform: rotate(-225deg);
+    transition: all 0.5s;
+}
+.dropdown .textbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 30px;
+    background: rgb(250, 250, 250);
+    border: none;
+    outline: none;
+    box-shadow: 0 50px 20px rgba(0,0,0,0.05);
+    padding: 12px 20px;
+    border-radius: 10px;
+    transition: all 0.5s;
+    font-weight: 600;
+    z-index: 100000;
+    font-size: 18px;
+    background-color: white;
+    color: #5b06f8;
+
+}
+.dropdown .option{
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    border-radius: 10px;
+    background: rgb(252, 251, 251);
+    box-shadow: 0 30px 30px rgba(252, 250, 250, 0.05);
+    overflow:scroll;
+    display: none;
+    transition: all 0.5s;
+    font-weight: 800;
+    height: 850px;
+    text-align: center;
+}
+.dropdown.active .option
+{
+    display: block;
+    transition: 0.5s;
+    font-weight: 800;
+    font-size: 18px ;
+}
+.dropdown .option div
+{
+    padding: 12px 20px ;
+cursor: pointer;
+transition: all 0.5s;
+}
+.dropdown .option div:hover
+{
+    background: #666;
+    color: rgb(250, 249, 248);
+    transition: all 0.5s;
+}
+
+header
+{
+background-color: beige;
+width: 100%;
+position: fixed;
+z-index: 999;
+align-items: center;
+padding: 10px 100px;
+float: left;
+}
+.a
+{
+text-decoration: none;
+color: blue;
+text-transform: uppercase;
+font-size: 40px;
+font-weight: 800;
+}
+.nav a
+{
+color: blue;
+text-decoration: none;
+font-size: 1.1em;
+font-weight: 500;
+padding-left: 30px;
+}
+.nav a:hover
+{
+    color: rgb(26, 26, 102);
+}
+
+.switch
+{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input{
+    display: none;
+
+}
+.slider
+{
+    position:absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    border-radius: 34px;
+    transition: .4s;
+    z-index: 20000000;
+}
+.slider::before{
+    content: '';
+    position:absolute;
+    width: 26px;
+    height: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: #fff;
+    border-radius: 50%;
+    transition: .4s;
+}
+input:checked + .slider{
+    background: #0b001f;
+
+}
+input:checked+ .slider::before{
+    transform: translateX(26px);
+
+}
+.dark-mode{
+    background: #0a0a0a;
+
+}
+.dark-mode .option
+{
+    color: rgb(4, 252, 252);
+    background-color:#666;
+
+}
+
+.dark-mode .a
+{
+    color:rgb(4, 114, 204);
+    font-size: 40px;
+    font-weight: 800;
+
+}
+.dark-mode .option div:hover
+{
+    color:rgb(0, 0, 0);
+    background-color: darkred;
+}
+.background
+{
+background:url(4296.jpg) ;
+    background-repeat: no-repeat;
+    background-size:contain;
+    height: 100vh;
+    background-attachment:fixed;
+    width: 100%;
+    height: 90vh;
+    font-size: 10px;
+    background-position: center;
+    backface-visibility: 0.5px;
+}
+.dark-mode .background
+{
+    background-position: center;
+    background: url(fc15ef0c723b92a8fd1869e423105d45.jpg);
+    background-repeat: no-repeat;
+    background-size:contain;
+    height: 100vh;
+    background-position: center;
+    width: 100%;
+    background-attachment:fixed;
+}
+
+.contain
+{
+    text-align: center;
+    height: 10000vh;
+    width: 100%;
+}
+
+.h3
+{
+    font-size: 40px;
+    font-weight: 800;
+    padding-top: 64px;
+    background-color: #070707;
+    color: red;
+}
+.H
+{
+    font-size: 40px;
+    font-weight: 800;
+    padding-top: 64px;
+    background-color: #070707;
+    color: red;
+    border-radius: 50px;
+    width: 50%;
+}
+.dark-mode .H
+{
+    width: 50%;
+    font-size: 40px;
+    font-weight: 800;
+    color: #06c8f8;
+    padding-top:65px;
+    background-color: brown;
+    border-radius:50px ;
+
+}
+.dark-mode .h3
+{
+    background-color: brown;
+    color: #06c8f8;
+    padding: 8px;
+    font-size: 40px;
+    font-weight: 800;
+}
+.option .b
+{
+    cursor:pointer;
+    text-decoration: none;
+    color: #000;
+}
+.option .b:hover
+{
+    color: #fff;
+} 
+.section 
+{
+    background-size: cover;
+    width:100% ;
+    height: 120vh;
+    background-repeat: no-repeat;
+    display:flex;
+    justify-content: center;
+    align-items:center ;
+    background-position: center;
+    flex-wrap: wrap;
+}
+.dark-mode.section
+{
+    background-size: cover;
+    width:100% ;
+    height: 120vh;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position: center;
+    flex-wrap: wrap;
+}
+.s
+{
+    background-size: cover;
+    width:100% ;
+    height: 120vh;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position: center;
+}
+.dark-mode .s
+{
+    background: url(Fatiha-2-Round-Black.jpg);
+    text-align: center;
+    background-size: contain;
+    width:100% ;
+    height: 190vh;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position: center;
+    
+} 
+.img
+{
+    height: 90vh;
+    width: 100%;
+}
+.dark-mode .img
+{
+    opacity: 0;
+}
+.audio
+{
+    width: 70%;
+}
+.dark-mode .audio
+{
+    padding: 700px;
+    width: 130%;
+    text-align: center;
+    padding-left: 100px;
+}
+.e
+{
+    width: 100%;
+    height: 100vh;
+}
+.u
+{
+    width: 100%;
+}
+
+.w
+{
+    text-decoration: none;
+    color: blue;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 500;
+}
+.dark-mode.w
+{
+    color:rgb(4, 114, 204);
+    font-size: 25px;
+    font-weight: 500;
+}
+.i1
+{
+    background-color: rgb(4, 248, 45);
+    color: white;
+    font-size: 15px;
+    font-weight:500 ;
+    border-radius: 20px;
+
+}
+.dark-mode.i1
+{
+    background-color: rgb(4, 248, 45);
+    color: white;
+    font-size: 15px;
+    font-weight:500 ;
+    border-radius: 20px;
+
+}
+.i2
+{
+    font-size: 15px;
+    font-weight:500 ;
+    background-color: rgb(4, 46, 182);
+    color: white;
+    border-radius: 20px;
+
+}
+.dark-mode.i2
+{
+    font-size: 15px;
+    font-weight:500 ;
+    background-color: rgb(4, 46, 182);
+    color: white;
+    border-radius: 20px;
+
+}
+.i3
+{
+    font-size: 15px;
+    font-weight:500 ;
+    background-color: rgb(104, 103, 103);
+    color: lightcoral;
+    border-radius: 20px;
+
+}
+.dark-mode.i3
+{
+    font-size: 15px;
+    font-weight:500 ;
+    background-color: rgb(104, 103, 103);
+    color: lightcoral;
+    border-radius: 20px;
+}
+.label
+{
+text-align: center;
+background-color:  rgb(240, 6, 6);
+width:100%;
+border:5px solid red;
+
+}
+.dark-mode.label
+{
+    text-align: center;
+background-color: rgba(0, 0, 0, 0.384);
+width:100%
+}
+@media (min-width:1000px) and (max-width:1400px)
+{
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:'poppins',sans-serif;
+        transition: 0.6s;
+    }
+    body
+    {
+        text-align: center;
+    }
+    
+    .dropdown{
+        position: relative;
+        margin-top:15px;
+        width:300px ;
+        height: 50px;
+        padding: 20px;
+        transition: all 0.5s;
+    }
+    .dropdown:before
+    {
+        content:'';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border: 2px solid rgb(245, 4, 4);
+        right: 20px;
+        top: 15px;
+        z-index: 1000000;
+        border-top: 2px solid rgb(253, 253, 253);
+        border-right: 2px solid #fff;
+        transform: rotate(-45deg);
+        transition: 0.5s;
+        pointer-events: none;
+    }
+    .dropdown.active:before
+    {
+        top:22px;
+        transform: rotate(-225deg);
+        transition: all 0.5s;
+    }
+    .dropdown .textbox{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        padding: 30px;
+        background: rgb(250, 250, 250);
+        border: none;
+        outline: none;
+        box-shadow: 0 50px 20px rgba(0,0,0,0.05);
+        padding: 12px 20px;
+        border-radius: 10px;
+        transition: all 0.5s;
+        font-weight: 600;
+        z-index: 100000;
+        font-size: 18px;
+        background-color: white;
+        color: #5b06f8;
+    
+    }
+    .dropdown .option{
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        border-radius: 10px;
+        background: rgb(252, 251, 251);
+        box-shadow: 0 30px 30px rgba(252, 250, 250, 0.05);
+        overflow:scroll;
+        display: none;
+        transition: all 0.5s;
+        font-weight: 800;
+        height: 850px;
+        text-align: center;
+    }
+    .dropdown.active .option
+    {
+        display: block;
+        transition: 0.5s;
+        font-weight: 800;
+        font-size: 18px ;
+    }
+    .dropdown .option div
+    {
+        padding: 12px 20px ;
+    cursor: pointer;
+    transition: all 0.5s;
+    }
+    .dropdown .option div:hover
+    {
+        background: #666;
+        color: rgb(250, 249, 248);
+        transition: all 0.5s;
+    }
+    
+    header
+    {
+    background-color: beige;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    align-items: center;
+    padding: 10px 100px;
+    float: left;
+    }
+    .a
+    {
+    text-decoration: none;
+    color: blue;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 800;
+    }
+    .nav a
+    {
+    color: blue;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding-left: 30px;
+    }
+    .nav a:hover
+    {
+        color: rgb(26, 26, 102);
+    }
+    
+    .switch
+    {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    .switch input{
+        display: none;
+    
+    }
+    .slider
+    {
+        position:absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #ccc;
+        border-radius: 34px;
+        transition: .4s;
+        z-index: 20000000;
+    }
+    .slider::before{
+        content: '';
+        position:absolute;
+        width: 26px;
+        height: 26px;
+        left: 4px;
+        bottom: 4px;
+        background: #fff;
+        border-radius: 50%;
+        transition: .4s;
+    }
+    input:checked + .slider{
+        background: #0b001f;
+    
+    }
+    input:checked+ .slider::before{
+        transform: translateX(26px);
+    
+    }
+    .dark-mode{
+        background: #0a0a0a;
+    
+    }
+    .dark-mode .option
+    {
+        color: rgb(4, 252, 252);
+        background-color:#666;
+    
+    }
+    
+    .dark-mode .a
+    {
+        color:rgb(4, 114, 204);
+        /* background-color:darkcyan; */
+        font-size: 40px;
+        font-weight: 800;
+    
+    }
+    .dark-mode .option div:hover
+    {
+        color:rgb(0, 0, 0);
+        background-color: darkred;
+    }
+    .background
+    {
+        background: url(4296.jpg) ;
+        background-repeat: no-repeat;
+        background-size:contain;
+        height: 100vh;
+        /* background-color: #0a0a0a; */
+        background-attachment:fixed;
+        width: 100%;
+        height: 90vh;
+        font-size: 10px;
+        background-position: center;
+        backface-visibility: 0.5px;
+    }
+    .dark-mode .background
+    {
+        background-position: center;
+        background: url(fc15ef0c723b92a8fd1869e423105d45.jpg);
+        background-repeat: no-repeat;
+        background-size:contain;
+        height: 100vh;
+        background-position: center;
+        width: 100%;
+        background-attachment:fixed;
+    }
+    /* /* */
+    .contain
+    {
+        text-align: center;
+        border: 6px solid red;
+        height: 10000vh;
+        width: 100%;
+    }
+    /* / */
+    .h3
+    {
+        font-size: 40px;
+        font-weight: 800;
+        padding-top: 64px;
+        background-color: #070707;
+        color: red;
+    }
+    .H
+    {
+        font-size: 40px;
+        font-weight: 800;
+        padding-top: 64px;
+        background-color: #070707;
+        color: red;
+        border-radius: 50px;
+        width: 50%;
+    }
+    .dark-mode .H
+    {
+        width: 50%;
+        font-size: 40px;
+        font-weight: 800;
+        color: #06c8f8;
+        padding-top:65px;
+        background-color: brown;
+        border-radius:50px ;
+    
+    }
+    .dark-mode .h3
+    {
+        background-color: brown;
+        color: #06c8f8;
+        padding: 8px;
+        font-size: 40px;
+        font-weight: 800;
+    }
+    .option .b
+    {
+        cursor:pointer;
+        text-decoration: none;
+        color: #000;
+    }
+    .option .b:hover
+    {
+        color: #fff;
+    } 
+    .section 
+    {
+        background-size: cover;
+        width:100% ;
+        height: 120vh;
+        background-repeat: no-repeat;
+        border: 8px solid navy;
+        display:flex;
+        justify-content: center;
+        align-items:center ;
+        background-position: center;
+        flex-wrap: wrap;
+    }
+    .dark-mode.section
+    {
+        background-size: cover;
+        width:100% ;
+        height: 120vh;
+        background-repeat: no-repeat;
+        border: 8px solid navy;
+        text-align: center;
+        background-position: center;
+        flex-wrap: wrap;
+    }
+    .s
+    {
+        background-size: cover;
+        width:100% ;
+        height: 120vh;
+        background-repeat: no-repeat;
+        border: 8px solid navy;
+        text-align: center;
+        background-position: center;
+    }
+    .dark-mode .s
+    {
+        background: url(Fatiha-2-Round-Black.jpg);
+        text-align: center;
+        background-size: contain;
+        width:100% ;
+        height: 190vh;
+        background-repeat: no-repeat;
+        border: 8px solid navy;
+        text-align: center;
+        background-position: center;
+        
+    } 
+    .w
+{
+    text-decoration: none;
+    color: blue;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 500;
+}
+.dark-mode.w
+{
+    color:rgb(4, 114, 204);
+    font-size:25px;
+    font-weight: 500;
+}
+    .img
+    {
+        height: 90vh;
+        width: 100%;
+    }
+    .dark-mode .img
+    {
+        opacity: 0;
+    }
+    .audio
+    {
+        width: 70%;
+    }
+    .dark-mode .audio
+    {
+        padding: 700px;
+        width: 160%;
+        text-align: center;
+        padding-left: 100px;
+    }
+    hr{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .e
+    {
+        width: 100%;
+        height: 100vh;
+    }
+    .u
+    {
+        width: 100%;
+    }
+    .i1
+{
+    background-color: rgb(4, 248, 45);
+    color: white;
+    font-size: 15px;
+    font-weight:500 ;
+    border-radius: 20px;
+
+}
+.dark-mode.i1
+{
+    background-color: rgb(4, 248, 45);
+    color: white;
+    font-size: 15px;
+    font-weight:500 ;
+    border-radius: 20px;
+
+}
+.i2
+{
+    background-color: rgb(4, 46, 182);
+    color: white;
+    font-size: 15px;
+    font-weight:500 ;
+    border-radius: 20px;
+
+}
+.dark-mode.i2
+{
+    background-color: rgb(4, 46, 182);
+    color: white;
+    font-size: 15px;
+    border-radius: 20px;
+    font-weight:500 ;
+}
+.i3
+{
+    background-color: rgb(104, 103, 103);
+    color: lightcoral;
+    font-size: 15px;
+    font-weight:500 ;
+    border-radius: 20px;
+
+}
+.dark-mode.i3
+{
+    background-color: rgb(104, 103, 103);
+    color: lightcoral;
+    font-size: 15px;
+    font-weight:500 ;
+    border-radius: 20px;
+}
+.label
+{
+text-align: center;
+background-color:  #000;
+width:100%
+}
+.dark-mode.label
+{
+    text-align: center;
+background-color: rgba(0, 0, 0, 0.384);
+width:100%;
+border:5px solid red;
+}
+}
